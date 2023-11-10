@@ -1,5 +1,6 @@
 import { useLocale } from "next-intl";
 import HeroSection from "./components/HeroSection";
+import AboutSection from "./components/AboutSection";
 
 async function getData(locale: string = "en") {
   const res = await fetch(
@@ -23,6 +24,7 @@ async function getData(locale: string = "en") {
 
 const sectionComponentsMap: { [key: string]: React.FC<{ data: any }> } = {
   ["hero-section"]: HeroSection,
+  ["about-section"]: AboutSection,
 };
 
 export default async function Home() {
@@ -30,7 +32,7 @@ export default async function Home() {
   const data = await getData(locale);
 
   return (
-    <main>
+    <main className="container mx-auto px-4">
       {data.attributes.Sections.map((section: any, index: number) => {
         const SectionComponent =
           sectionComponentsMap[section.__component.replace("sections.", "")];

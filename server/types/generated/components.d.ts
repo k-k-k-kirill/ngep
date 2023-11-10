@@ -13,6 +13,19 @@ export interface ActionsButton extends Schema.Component {
   };
 }
 
+export interface SectionsAboutSection extends Schema.Component {
+  collectionName: 'components_sections_about_sections';
+  info: {
+    displayName: 'About Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Image: Attribute.Media;
+    Content: Attribute.RichText;
+  };
+}
+
 export interface SectionsHeroSection extends Schema.Component {
   collectionName: 'components_sections_hero_sections';
   info: {
@@ -32,6 +45,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'actions.button': ActionsButton;
+      'sections.about-section': SectionsAboutSection;
       'sections.hero-section': SectionsHeroSection;
     }
   }

@@ -19,7 +19,8 @@
     "Sections": {
       "type": "dynamiczone",
       "components": [
-        "sections.hero-section"
+        "sections.hero-section",
+        "sections.about-section"
       ],
       "pluginOptions": {
         "i18n": {
