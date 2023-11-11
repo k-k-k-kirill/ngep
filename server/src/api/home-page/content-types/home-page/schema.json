@@ -20,7 +20,9 @@
       "type": "dynamiczone",
       "components": [
         "sections.hero-section",
-        "sections.about-section"
+        "sections.about-section",
+        "sections.process-section",
+        "sections.cta-section"
       ],
       "pluginOptions": {
         "i18n": {

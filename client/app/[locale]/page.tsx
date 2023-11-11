@@ -1,10 +1,12 @@
 import { useLocale } from "next-intl";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+import ProcessSection from "./components/ProcessSection";
+import CTASection from "./components/CTASection";
 
 async function getData(locale: string = "en") {
   const res = await fetch(
-    `${process.env.API_URL}/api/home-page?populate[Sections][populate]=*&locale=${locale}`,
+    `${process.env.API_URL}/api/home-page?populate=deep,10&locale=${locale}`,
     {
       headers: {
         "Content-Type": "application/json",
@@ -25,6 +27,8 @@ async function getData(locale: string = "en") {
 const sectionComponentsMap: { [key: string]: React.FC<{ data: any }> } = {
   ["hero-section"]: HeroSection,
   ["about-section"]: AboutSection,
+  ["process-section"]: ProcessSection,
+  ["cta-section"]: CTASection,
 };
 
 export default async function Home() {
@@ -33,7 +37,7 @@ export default async function Home() {
 
   return (
     <main className="container mx-auto px-4">
-      {data.attributes.Sections.map((section: any, index: number) => {
+      {data.attributes.Sections?.map((section: any, index: number) => {
         const SectionComponent =
           sectionComponentsMap[section.__component.replace("sections.", "")];
         if (!SectionComponent) {

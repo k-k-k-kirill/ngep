@@ -380,7 +380,12 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
   attributes: {
     Sections: Attribute.DynamicZone<
-      ['sections.hero-section', 'sections.about-section']
+      [
+        'sections.hero-section',
+        'sections.about-section',
+        'sections.process-section',
+        'sections.cta-section'
+      ]
     > &
       Attribute.SetPluginOptions<{
         i18n: {
