@@ -384,7 +384,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         'sections.hero-section',
         'sections.about-section',
         'sections.process-section',
-        'sections.cta-section'
+        'sections.cta-section',
+        'sections.industries-section'
       ]
     > &
       Attribute.SetPluginOptions<{

@@ -3,6 +3,7 @@ import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import ProcessSection from "./components/ProcessSection";
 import CTASection from "./components/CTASection";
+import IndustriesSection from "./components/IndustriesSection/IndustriesSection";
 
 async function getData(locale: string = "en") {
   const res = await fetch(
@@ -29,6 +30,7 @@ const sectionComponentsMap: { [key: string]: React.FC<{ data: any }> } = {
   ["about-section"]: AboutSection,
   ["process-section"]: ProcessSection,
   ["cta-section"]: CTASection,
+  ["industries-section"]: IndustriesSection,
 };
 
 export default async function Home() {

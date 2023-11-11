@@ -13,6 +13,16 @@ export interface ActionsButton extends Schema.Component {
   };
 }
 
+export interface RepeatersIdustry extends Schema.Component {
+  collectionName: 'components_repeaters_idustries';
+  info: {
+    displayName: 'Idustry';
+  };
+  attributes: {
+    Title: Attribute.String;
+  };
+}
+
 export interface RepeatersProcessStep extends Schema.Component {
   collectionName: 'components_repeaters_process_steps';
   info: {
@@ -64,6 +74,18 @@ export interface SectionsHeroSection extends Schema.Component {
   };
 }
 
+export interface SectionsIndustriesSection extends Schema.Component {
+  collectionName: 'components_sections_industries_sections';
+  info: {
+    displayName: 'Industries Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Industries: Attribute.Component<'repeaters.idustry', true>;
+  };
+}
+
 export interface SectionsProcessSection extends Schema.Component {
   collectionName: 'components_sections_process_sections';
   info: {
@@ -81,10 +103,12 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'actions.button': ActionsButton;
+      'repeaters.idustry': RepeatersIdustry;
       'repeaters.process-step': RepeatersProcessStep;
       'sections.about-section': SectionsAboutSection;
       'sections.cta-section': SectionsCtaSection;
       'sections.hero-section': SectionsHeroSection;
+      'sections.industries-section': SectionsIndustriesSection;
       'sections.process-section': SectionsProcessSection;
     }
   }

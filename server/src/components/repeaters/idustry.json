@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_repeaters_idustries",
+  "info": {
+    "displayName": "Idustry"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    }
+  }
+}

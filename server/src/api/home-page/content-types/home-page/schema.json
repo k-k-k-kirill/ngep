@@ -22,7 +22,8 @@
         "sections.hero-section",
         "sections.about-section",
         "sections.process-section",
-        "sections.cta-section"
+        "sections.cta-section",
+        "sections.industries-section"
       ],
       "pluginOptions": {
         "i18n": {
