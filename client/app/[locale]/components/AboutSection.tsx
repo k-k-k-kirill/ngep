@@ -11,7 +11,7 @@ const AboutSection: React.FC<AboutSectionProps> = async ({ data }) => {
   const { Title, Content, Image } = data;
 
   return (
-    <Section className="mb-12">
+    <Section className="mb-12 container mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div>
           {Title && <h2 className="mb-3 order-2 lg:order-1">{Title}</h2>}

@@ -7,12 +7,25 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    extend: {
+      colors: {
+        greyish: "#F4F4F6",
+      },
+    },
     margin: {
       "1": "10px",
       "2": "20px",
       "3": "30px",
       "4": "40px",
+      "5": "50px",
       "12": "120px",
+    },
+    padding: {
+      "1": "10px",
+      "2": "20px",
+      "3": "30px",
+      "4": "20px",
+      "5": "50px",
     },
     container: {
       center: true,

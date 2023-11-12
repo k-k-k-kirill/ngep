@@ -1,4 +1,4 @@
-.buttonLink {
+.button {
   font-family: "Mona Sans", "Open Sans";
   font-size: 18px;
   font-style: normal;
@@ -12,7 +12,7 @@
   transition: background-color 0.2s, color 0.2s;
 }
 
-.buttonLink:hover {
+.button:hover {
   background-color: var(--Black, #000);
   color: white;
 }

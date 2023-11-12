@@ -362,6 +362,39 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiFormSubmissionFormSubmission extends Schema.CollectionType {
+  collectionName: 'form_submissions';
+  info: {
+    singularName: 'form-submission';
+    pluralName: 'form-submissions';
+    displayName: 'Form Submission';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Email: Attribute.Email;
+    CompanyWebsite: Attribute.String;
+    Message: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::form-submission.form-submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::form-submission.form-submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -385,7 +418,10 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         'sections.about-section',
         'sections.process-section',
         'sections.cta-section',
-        'sections.industries-section'
+        'sections.industries-section',
+        'sections.features-section',
+        'sections.benefits-section',
+        'sections.contact-section'
       ]
     > &
       Attribute.SetPluginOptions<{
@@ -742,6 +778,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::form-submission.form-submission': ApiFormSubmissionFormSubmission;
       'api::home-page.home-page': ApiHomePageHomePage;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;

@@ -13,6 +13,29 @@ export interface ActionsButton extends Schema.Component {
   };
 }
 
+export interface RepeatersBenefit extends Schema.Component {
+  collectionName: 'components_repeaters_benefits';
+  info: {
+    displayName: 'Benefit';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Content: Attribute.RichText;
+  };
+}
+
+export interface RepeatersFeature extends Schema.Component {
+  collectionName: 'components_repeaters_features';
+  info: {
+    displayName: 'Feature';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Content: Attribute.RichText;
+  };
+}
+
 export interface RepeatersIdustry extends Schema.Component {
   collectionName: 'components_repeaters_idustries';
   info: {
@@ -47,6 +70,28 @@ export interface SectionsAboutSection extends Schema.Component {
   };
 }
 
+export interface SectionsBenefitsSection extends Schema.Component {
+  collectionName: 'components_sections_benefits_sections';
+  info: {
+    displayName: 'Benefits Section';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Image: Attribute.Media;
+    Benefits: Attribute.Component<'repeaters.benefit', true>;
+  };
+}
+
+export interface SectionsContactSection extends Schema.Component {
+  collectionName: 'components_sections_contact_sections';
+  info: {
+    displayName: 'Contact Section';
+  };
+  attributes: {
+    Title: Attribute.String;
+  };
+}
+
 export interface SectionsCtaSection extends Schema.Component {
   collectionName: 'components_sections_cta_sections';
   info: {
@@ -56,6 +101,18 @@ export interface SectionsCtaSection extends Schema.Component {
     Title: Attribute.String;
     Button: Attribute.Component<'actions.button'>;
     Image: Attribute.Media;
+  };
+}
+
+export interface SectionsFeaturesSection extends Schema.Component {
+  collectionName: 'components_sections_features_sections';
+  info: {
+    displayName: 'Features Section';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Features: Attribute.Component<'repeaters.feature', true>;
   };
 }
 
@@ -103,10 +160,15 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'actions.button': ActionsButton;
+      'repeaters.benefit': RepeatersBenefit;
+      'repeaters.feature': RepeatersFeature;
       'repeaters.idustry': RepeatersIdustry;
       'repeaters.process-step': RepeatersProcessStep;
       'sections.about-section': SectionsAboutSection;
+      'sections.benefits-section': SectionsBenefitsSection;
+      'sections.contact-section': SectionsContactSection;
       'sections.cta-section': SectionsCtaSection;
+      'sections.features-section': SectionsFeaturesSection;
       'sections.hero-section': SectionsHeroSection;
       'sections.industries-section': SectionsIndustriesSection;
       'sections.process-section': SectionsProcessSection;

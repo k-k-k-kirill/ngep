@@ -11,7 +11,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
   const { Title, Content, Image: StrapiImage, CTA } = data;
 
   return (
-    <Section className="mb-12">
+    <Section className="mb-12 container mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="flex flex-col justify-center order-2 lg:order-1">
           {Title && <h1 className="mb-3">{Title}</h1>}

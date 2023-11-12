@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "./ButtonLink.module.css";
+import Button from "../Button/Button";
 
 interface ButtonProps {
   data: any;
@@ -11,7 +11,7 @@ const ButtonLink: React.FC<ButtonProps> = ({ data }) => {
 
   return (
     <Link href={`/${Url}`}>
-      <button className={styles.buttonLink}>{Title}</button>
+      <Button title={Title} />
     </Link>
   );
 };

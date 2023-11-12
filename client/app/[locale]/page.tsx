@@ -4,6 +4,9 @@ import AboutSection from "./components/AboutSection";
 import ProcessSection from "./components/ProcessSection";
 import CTASection from "./components/CTASection";
 import IndustriesSection from "./components/IndustriesSection/IndustriesSection";
+import FeaturesSection from "./components/FeaturesSection/FeaturesSection";
+import BenefitsSection from "./components/BenefitsSection";
+import ContactSection from "./components/ContactSection/ContactSection";
 
 async function getData(locale: string = "en") {
   const res = await fetch(
@@ -31,6 +34,9 @@ const sectionComponentsMap: { [key: string]: React.FC<{ data: any }> } = {
   ["process-section"]: ProcessSection,
   ["cta-section"]: CTASection,
   ["industries-section"]: IndustriesSection,
+  ["features-section"]: FeaturesSection,
+  ["benefits-section"]: BenefitsSection,
+  ["contact-section"]: ContactSection,
 };
 
 export default async function Home() {
@@ -38,7 +44,7 @@ export default async function Home() {
   const data = await getData(locale);
 
   return (
-    <main className="container mx-auto px-4">
+    <main>
       {data.attributes.Sections?.map((section: any, index: number) => {
         const SectionComponent =
           sectionComponentsMap[section.__component.replace("sections.", "")];

@@ -23,7 +23,10 @@
         "sections.about-section",
         "sections.process-section",
         "sections.cta-section",
-        "sections.industries-section"
+        "sections.industries-section",
+        "sections.features-section",
+        "sections.benefits-section",
+        "sections.contact-section"
       ],
       "pluginOptions": {
         "i18n": {

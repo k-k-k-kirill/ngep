@@ -11,8 +11,8 @@ const CTASection: React.FC<CTASectionProps> = ({ data }) => {
   const { Title, Button, Image } = data;
 
   return (
-    <Section>
-      <div className="grid grid-cols-1 lg:grid-cols-2 mb-12">
+    <Section className="container mx-auto px-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 mb-12 gap-4">
         <div className="mb-3 lg:mb-0">
           <SectionImage image={Image} />
         </div>
