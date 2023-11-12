@@ -13,6 +13,17 @@ export interface ActionsButton extends Schema.Component {
   };
 }
 
+export interface ActionsLink extends Schema.Component {
+  collectionName: 'components_actions_links';
+  info: {
+    displayName: 'Link';
+  };
+  attributes: {
+    Url: Attribute.String;
+    Title: Attribute.String;
+  };
+}
+
 export interface RepeatersBenefit extends Schema.Component {
   collectionName: 'components_repeaters_benefits';
   info: {
@@ -116,6 +127,20 @@ export interface SectionsFeaturesSection extends Schema.Component {
   };
 }
 
+export interface SectionsFooter extends Schema.Component {
+  collectionName: 'components_sections_footers';
+  info: {
+    displayName: 'Footer';
+    description: '';
+  };
+  attributes: {
+    Address: Attribute.String;
+    Phone: Attribute.String;
+    Email: Attribute.Email;
+    PrivacyPolicy: Attribute.Component<'actions.link'>;
+  };
+}
+
 export interface SectionsHeroSection extends Schema.Component {
   collectionName: 'components_sections_hero_sections';
   info: {
@@ -160,6 +185,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'actions.button': ActionsButton;
+      'actions.link': ActionsLink;
       'repeaters.benefit': RepeatersBenefit;
       'repeaters.feature': RepeatersFeature;
       'repeaters.idustry': RepeatersIdustry;
@@ -169,6 +195,7 @@ declare module '@strapi/types' {
       'sections.contact-section': SectionsContactSection;
       'sections.cta-section': SectionsCtaSection;
       'sections.features-section': SectionsFeaturesSection;
+      'sections.footer': SectionsFooter;
       'sections.hero-section': SectionsHeroSection;
       'sections.industries-section': SectionsIndustriesSection;
       'sections.process-section': SectionsProcessSection;

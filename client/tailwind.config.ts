@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         greyish: "#F4F4F6",
+        grey: "#E2E2E2",
       },
     },
     margin: {
