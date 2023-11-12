@@ -138,6 +138,19 @@ export interface SectionsFooter extends Schema.Component {
     Phone: Attribute.String;
     Email: Attribute.Email;
     PrivacyPolicy: Attribute.Component<'actions.link'>;
+    AddressLabel: Attribute.String;
+    ContactLabel: Attribute.String;
+    LegalLabel: Attribute.String;
+  };
+}
+
+export interface SectionsHeader extends Schema.Component {
+  collectionName: 'components_sections_headers';
+  info: {
+    displayName: 'Header';
+  };
+  attributes: {
+    Navigation: Attribute.Component<'actions.link', true>;
   };
 }
 
@@ -196,6 +209,7 @@ declare module '@strapi/types' {
       'sections.cta-section': SectionsCtaSection;
       'sections.features-section': SectionsFeaturesSection;
       'sections.footer': SectionsFooter;
+      'sections.header': SectionsHeader;
       'sections.hero-section': SectionsHeroSection;
       'sections.industries-section': SectionsIndustriesSection;
       'sections.process-section': SectionsProcessSection;

@@ -27,7 +27,8 @@
         "sections.features-section",
         "sections.benefits-section",
         "sections.contact-section",
-        "sections.footer"
+        "sections.footer",
+        "sections.header"
       ],
       "pluginOptions": {
         "i18n": {

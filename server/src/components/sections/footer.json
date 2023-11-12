@@ -19,6 +19,15 @@
       "type": "component",
       "repeatable": false,
       "component": "actions.link"
+    },
+    "AddressLabel": {
+      "type": "string"
+    },
+    "ContactLabel": {
+      "type": "string"
+    },
+    "LegalLabel": {
+      "type": "string"
     }
   }
 }

@@ -6,7 +6,15 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ data }) => {
-  const { Address, Phone, Email, PrivacyPolicy } = data;
+  const {
+    Address,
+    Phone,
+    Email,
+    PrivacyPolicy,
+    AddressLabel,
+    ContactLabel,
+    LegalLabel,
+  } = data;
   return (
     <footer className="bg-grey py-5">
       <div className="container px-4 mx-auto">
@@ -17,7 +25,7 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
           <div>
             {Address && (
               <div>
-                <h3 className="mb-2">Address</h3>
+                <h3 className="mb-2">{AddressLabel}</h3>
                 <p>{Address}</p>
               </div>
             )}
@@ -25,7 +33,7 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
           <div>
             {(Phone || Email) && (
               <div>
-                <h3 className="mb-2">Contact</h3>
+                <h3 className="mb-2">{ContactLabel}</h3>
                 {Phone && (
                   <div>
                     <SectionLink
@@ -48,7 +56,7 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
             )}
           </div>
           <div>
-            <h3 className="mb-2">Legal</h3>
+            <h3 className="mb-2">{LegalLabel}</h3>
             {PrivacyPolicy && (
               <div>
                 <SectionLink

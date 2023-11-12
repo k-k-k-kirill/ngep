@@ -422,7 +422,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         'sections.features-section',
         'sections.benefits-section',
         'sections.contact-section',
-        'sections.footer'
+        'sections.footer',
+        'sections.header'
       ]
     > &
       Attribute.SetPluginOptions<{

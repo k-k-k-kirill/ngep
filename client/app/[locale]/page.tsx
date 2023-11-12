@@ -8,6 +8,7 @@ import FeaturesSection from "./components/FeaturesSection/FeaturesSection";
 import BenefitsSection from "./components/BenefitsSection";
 import ContactSection from "./components/ContactSection/ContactSection";
 import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
 
 async function getData(locale: string = "en") {
   const res = await fetch(
@@ -30,6 +31,7 @@ async function getData(locale: string = "en") {
 }
 
 const sectionComponentsMap: { [key: string]: React.FC<{ data: any }> } = {
+  ["header"]: Header,
   ["hero-section"]: HeroSection,
   ["about-section"]: AboutSection,
   ["process-section"]: ProcessSection,
