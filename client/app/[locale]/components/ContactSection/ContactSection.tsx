@@ -14,7 +14,7 @@ interface ContactSectionProps {
 const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
   const { Title } = data;
 
-  const [isSubmitted, setIsSubmitted] = useState(false); // State to track submission status
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const validationSchema = Yup.object().shape({
     Name: Yup.string().required("Name is required"),
@@ -46,8 +46,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
       );
 
       if (response.ok) {
-        setIsSubmitted(true); // Set submission status to true on success
-        resetForm(); // Optional: Reset the form fields
+        setIsSubmitted(true);
+        resetForm();
       } else {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

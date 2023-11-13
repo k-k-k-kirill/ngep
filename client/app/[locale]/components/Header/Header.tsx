@@ -26,16 +26,18 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
   };
 
   return (
-    <header className="container mx-auto px-4 grid grid-cols-3 lg:grid-cols-4 gap-4 py-5">
+    <header className="container mx-auto px-4 grid grid-cols-4 gap-4 py-5">
       <div className="lg:col-span-2">
         <h1>EPD</h1>
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center col-span-2 lg:col-span-1">
         {Navigation && (
           <nav>
             {Navigation.map((item, index) => (
               <SectionLink
-                className="mr-2 lg:mr-5"
+                className={`${
+                  index < Navigation.length - 1 ? "mr-1" : ""
+                } lg:mr-4 text-sm lg:text-base ${styles.navLink}`}
                 key={index}
                 url={item.Url ? `/${item.Url}` : "/"}
                 title={item.Title}

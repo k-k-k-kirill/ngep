@@ -21,7 +21,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
 
         {StrapiImage && (
           <div
-            className="order-1 lg:order-2 mb-3 lg:mb-0"
+            className="order-1 lg:order-2 mb-3 lg:mb-0 relative"
             style={{ position: "relative" }}
           >
             <SectionImage image={StrapiImage} />
