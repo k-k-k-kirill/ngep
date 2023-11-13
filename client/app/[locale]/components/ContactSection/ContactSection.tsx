@@ -77,7 +77,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
   }
 
   return (
-    <Section className="bg-greyish py-5">
+    <Section id="contact" className="bg-greyish py-5">
       <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div>{Title && <h2>{Title}</h2>}</div>
         <div>
@@ -145,22 +145,28 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                 </div>
 
                 <div className="mb-2">
-                  <label>
-                    <Field type="checkbox" name="PrivacyPolicyAgreed" />
-                    {" I agree to the privacy policy"}
+                  <label
+                    className="flex items-center"
+                    style={{ fontSize: "12px", lineHeight: 1 }}
+                  >
+                    <Field
+                      style={{ backgroundColor: "transparent", height: "12px" }}
+                      type="checkbox"
+                      name="PrivacyPolicyAgreed"
+                    />
+                    <span
+                      style={{ display: "inline-block", marginLeft: "5px" }}
+                    >
+                      I agree to the privacy policy
+                    </span>
                   </label>
-                  <ErrorMessage
-                    className={styles.errorMessage}
-                    name="PrivacyPolicyAgreed"
-                    component="div"
-                  />
                 </div>
 
                 <Button
                   type="submit"
                   className="ml-auto"
                   disabled={isSubmitting || !values.PrivacyPolicyAgreed}
-                  title={"Submit"}
+                  title={"Get in touch"}
                 />
               </Form>
             )}

@@ -49,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
       <div className={`flex items-center justify-end relative`}>
         <div
           onClick={toggleDropdown}
-          className={`cursor-pointer flex items-center ${styles.languageSwitcher}`}
+          className={`cursor-pointer flex items-center`}
         >
           <span className={styles.currentLanguage}>{locale}</span>
           <Image
@@ -63,7 +63,9 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
           <div className={`${styles.dropdown} absolute right-0 bg-white`}>
             {otherLanguages.map((lang) => (
               <div key={lang} className={`${styles.dropdownItem}`}>
-                <Link href={`/${lang}`}>{lang.toUpperCase()}</Link>
+                <Link className="capitalize" href={`/${lang}`}>
+                  {lang}
+                </Link>
               </div>
             ))}
           </div>

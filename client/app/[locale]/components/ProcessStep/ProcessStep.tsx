@@ -21,7 +21,7 @@ const ProcessStep: React.FC<{
   }, [isOpen]);
 
   return (
-    <div className={`${styles.step} py-3`}>
+    <div className={`${styles.step} py-2`}>
       <div
         onClick={() => setIsOpen(!isOpen)}
         className="flex justify-between items-center cursor-pointer"

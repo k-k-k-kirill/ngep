@@ -28,6 +28,9 @@ const config: Config = {
       "4": "20px",
       "5": "50px",
     },
+    gap: {
+      "4": "50px",
+    },
     container: {
       center: true,
     },

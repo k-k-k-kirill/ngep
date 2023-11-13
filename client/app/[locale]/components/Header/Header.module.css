@@ -5,10 +5,11 @@
 
 .dropdown {
   top: 100%;
-  min-width: 100px;
+  min-width: 56px;
   z-index: 1;
   border-radius: 10px;
   border: 1px solid #000;
+  background-color: #fbfafa;
 }
 
 .dropdownItem {
@@ -37,7 +38,7 @@
 }
 
 .currentLanguage {
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-right: 5px;
 }
 
