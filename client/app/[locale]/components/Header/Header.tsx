@@ -46,10 +46,10 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
           </nav>
         )}
       </div>
-      <div className="flex items-center justify-end relative">
+      <div className={`flex items-center justify-end relative`}>
         <div
           onClick={toggleDropdown}
-          className="cursor-pointer flex items-center"
+          className={`cursor-pointer flex items-center ${styles.languageSwitcher}`}
         >
           <span className={styles.currentLanguage}>{locale}</span>
           <Image

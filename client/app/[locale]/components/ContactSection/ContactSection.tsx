@@ -13,7 +13,6 @@ interface ContactSectionProps {
 
 const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
   const { Title } = data;
-
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const validationSchema = Yup.object().shape({
@@ -21,6 +20,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
     Email: Yup.string().email("Invalid email").required("Email is required"),
     CompanyWebsite: Yup.string().url("Invalid URL"),
     Message: Yup.string().required("Message is required"),
+    PrivacyPolicyAgreed: Yup.boolean().oneOf(
+      [true],
+      "You must agree to the privacy policy"
+    ),
   });
 
   const initialValues = {
@@ -28,6 +31,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
     Email: "",
     CompanyWebsite: "",
     Message: "",
+    PrivacyPolicyAgreed: false, // Initial value for the checkbox
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -62,7 +66,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
     return (
       <Section className="bg-greyish py-5">
         <div className="container mx-auto px-4">
-          <h2>Thank You!</h2>
+          <h2 className="mb-2">Thank You!</h2>
           <p>
             Your message has been successfully sent. We will get back to you
             soon.
@@ -82,7 +86,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
           >
-            {({ isSubmitting }) => (
+            {({ isSubmitting, values }) => (
               <Form>
                 <div className="mb-2">
                   <Field
@@ -91,7 +95,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                     name="Name"
                     placeholder="Name*"
                   />
-                  <ErrorMessage name="Name" component="div" />
+                  <ErrorMessage
+                    className={styles.errorMessage}
+                    name="Name"
+                    component="div"
+                  />
                 </div>
 
                 <div className="mb-2">
@@ -101,7 +109,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                     name="Email"
                     placeholder="Email*"
                   />
-                  <ErrorMessage name="Email" component="div" />
+                  <ErrorMessage
+                    className={styles.errorMessage}
+                    name="Email"
+                    component="div"
+                  />
                 </div>
 
                 <div className="mb-2">
@@ -111,7 +123,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                     name="CompanyWebsite"
                     placeholder="Company Website"
                   />
-                  <ErrorMessage name="CompanyWebsite" component="div" />
+                  <ErrorMessage
+                    className={styles.errorMessage}
+                    name="CompanyWebsite"
+                    component="div"
+                  />
                 </div>
 
                 <div className="mb-2">
@@ -121,13 +137,29 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                     name="Message"
                     placeholder="Message*"
                   />
-                  <ErrorMessage name="Message" component="div" />
+                  <ErrorMessage
+                    className={styles.errorMessage}
+                    name="Message"
+                    component="div"
+                  />
+                </div>
+
+                <div className="mb-2">
+                  <label>
+                    <Field type="checkbox" name="PrivacyPolicyAgreed" />
+                    {" I agree to the privacy policy"}
+                  </label>
+                  <ErrorMessage
+                    className={styles.errorMessage}
+                    name="PrivacyPolicyAgreed"
+                    component="div"
+                  />
                 </div>
 
                 <Button
                   type="submit"
                   className="ml-auto"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || !values.PrivacyPolicyAgreed}
                   title={"Submit"}
                 />
               </Form>
