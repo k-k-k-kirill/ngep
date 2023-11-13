@@ -28,3 +28,13 @@
   font-size: 14px;
   margin-left: 26px;
 }
+
+.checkboxLabel {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.checkboxField {
+  height: 12px;
+  background-color: transparent;
+}

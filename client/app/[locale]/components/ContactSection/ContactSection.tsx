@@ -31,7 +31,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
     Email: "",
     CompanyWebsite: "",
     Message: "",
-    PrivacyPolicyAgreed: false, // Initial value for the checkbox
+    PrivacyPolicyAgreed: false,
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -146,11 +146,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
 
                 <div className="mb-2">
                   <label
-                    className="flex items-center"
-                    style={{ fontSize: "12px", lineHeight: 1 }}
+                    className={`flex items-center ${styles.checkboxLabel}`}
                   >
                     <Field
-                      style={{ backgroundColor: "transparent", height: "12px" }}
+                      className={styles.checkboxField}
                       type="checkbox"
                       name="PrivacyPolicyAgreed"
                     />
