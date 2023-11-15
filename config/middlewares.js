@@ -1,4 +1,4 @@
-module.exports = [
+module.exports = ({ env }) => [
   "strapi::errors",
   {
     name: "strapi::security",
@@ -12,14 +12,18 @@ module.exports = [
             "data:",
             "blob:",
             "dl.airtable.com",
-            `https://${process.env.AWS_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com`,
+            `https://${env("AWS_BUCKET")}.s3.${env(
+              "AWS_REGION"
+            )}.amazonaws.com/`,
           ],
           "media-src": [
             "'self'",
             "data:",
             "blob:",
             "dl.airtable.com",
-            `https://${process.env.AWS_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com`,
+            `https://${env("AWS_BUCKET")}.s3.${env(
+              "AWS_REGION"
+            )}.amazonaws.com/`,
           ],
           upgradeInsecureRequests: null,
         },
