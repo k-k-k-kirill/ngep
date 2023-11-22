@@ -9,7 +9,12 @@ module.exports = {
         from: "your verified email address",
         replyTo: "info@ngep.eu",
         subject: "New form submission on NGEP website",
-        text: `${result}`,
+        text: `
+            Name: ${result.Name}
+            Email: ${result.Email}
+            Company website: ${result.CompanyWebsite}
+            Message: ${result.Message}
+        `,
       });
     } catch (err) {
       console.log(err);
